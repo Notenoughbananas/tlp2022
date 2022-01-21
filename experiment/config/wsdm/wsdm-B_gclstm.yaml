@@ -1,0 +1,32 @@
+data: wsdm-B
+model: gclstm
+
+save_predictions: True
+decoder_batch_size: 100000
+max_label_links: 50000
+
+min_node_emb_size: 5
+
+weekday_filter: 'none'
+#  - 'weekdays'
+#  - 'weekends'
+
+learning_rate:
+  - 0.0001
+
+num_hist_steps: 1
+
+rand_idx_rate: 0.4
+rand_etype_rate: 0.3
+rand_time_rate: 0.5
+
+decoder_time_encoder_dim: 90
+decoder_edge_type_emb_dim: 90
+decoder_time_emb_dim: 30
+
+gcn_parameters:
+  layer_1_feats:
+    - 150
+  K: 3
+  layer_2_feats_same_as_l1: True
+  cls_feats: 200

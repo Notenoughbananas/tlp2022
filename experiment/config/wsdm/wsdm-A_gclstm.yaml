@@ -1,0 +1,36 @@
+data: wsdm-A
+model: gclstm
+
+save_predictions: True
+decoder_batch_size: 100000
+max_label_links: 20000
+
+min_node_emb_size: 200
+skip_computed_grid_cells: False
+
+weekday_filter: "none"
+    #  - 'weekdays'
+    #  - 'weekends'
+
+learning_rate:
+  - 0.001
+  - 0.0001
+  - 0.00001
+
+num_hist_steps:
+  - 1
+
+rand_idx_rate: 0.2
+rand_etype_rate: 0.5
+rand_time_rate: 0.4
+
+decoder_time_encoder_dim: 90
+decoder_edge_type_emb_dim: 120
+decoder_time_emb_dim: 30
+
+gcn_parameters:
+  layer_1_feats:
+    - 200
+  K: 3
+  layer_2_feats_same_as_l1: True
+  cls_feats: 200
